@@ -1,13 +1,21 @@
-from flask import Flask
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
 @app.route("/")
-def home():
+def hello():
     return "Hello, Flask!"
 
-print("Loading configuration....")
-# Here, you can add code to actually load a configuration if you need to.
-print("Done loading configuration")
+@app.route("/map")
+def map():
+    return render_template('map.html')
 
 if __name__ == '__main__':
-    app.run()
+    print("Loading configuration....")
+    # Here, you can add code to actually load a configuration if you need to.
+    print("Done loading configuration")
+    app.run(debug=True)
+
+    
+#  *------------------------------------------------------------------*   
+
