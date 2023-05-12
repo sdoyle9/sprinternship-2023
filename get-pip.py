@@ -8,7 +8,7 @@
 # an entire copy of pip (version 23.1.2).
 #
 # Pip is a thing that installs packages, pip itself is a package that someone
-# might want to install, especially if they're looking to run this get-pip.py
+# might want to install, especially if they're looking to run this get-pip.pylo
 # script. Pip has a lot of code to deal with the security of installing
 # packages, various edge cases on various platforms, and other such sort of
 # "tribal knowledge" that has been encoded in its code base. Because of this
