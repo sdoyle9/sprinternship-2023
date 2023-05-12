@@ -1,14 +1,15 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
+app.template_folder = 'templates'
 
 @app.route("/")
-def hello():
-    return "Hello, Flask!"
-
-@app.route("/map")
 def map():
     return render_template('map.html')
+
+# @app.route("/map")
+# def map():
+#     return render_template('map.html')
 
 if __name__ == '__main__':
     print("Loading configuration....")
