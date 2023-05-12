@@ -14,6 +14,3 @@ print("this is so weird")
 #Does this work?
 #rania test
 #sophie
-
-#karla test
-#karla test2
