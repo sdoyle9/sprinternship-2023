@@ -15,7 +15,8 @@ if __name__ == '__main__':
     print("Loading configuration....")
     # Here, you can add code to actually load a configuration if you need to.
     print("Done loading configuration")
-    app.run(debug=True)
+    app.run(debug = False)
+    # app.run(debug=True)
 
     
 #  *------------------------------------------------------------------*   
