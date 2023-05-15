@@ -5,7 +5,8 @@ app.template_folder = 'templates'
 
 @app.route("/")
 def map():
-    return render_template('map.html')
+    # Change page
+    return render_template('Login_page.html')
 
 # @app.route("/map")
 # def map():
