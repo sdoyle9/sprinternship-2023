@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
     type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
     type="text/javascript" charset="utf-8"></script>
-  </head>
-  <body>
-    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+<link href="homepages.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    html, body, #mapContainer {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<div class="map-container" id="mapContainer"></div>
+  <nav>
+    <ul class="nav-menu">
+      <li>
+    <div class="search-bar">
+        <form action="/search" method="get">
+            <input type="text" name="query" placeholder="Type in location:">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</li>
+      <li><a href="#">Main Page</a></li>
+      <li><a href="#jiaoshe">option1</a></li>
+      <li><a href="#base">option2</a></li>
+      <li><a href="#plot">option3</a></li>
+      <li><a href="index2.html">option4</a></li>
+    </ul>
+    <div class="burger">
+      <div class="top-line"></div>
+      <div class="middle-line"></div>
+      <div class="bottom-line"></div>
+    </div>
+  </nav>
     <script>
-      // Initialize the platform object
       var platform = new H.service.Platform({
         'apikey': 'qlrRiPNTPWGYLnSG9qJmWGtSay-QVgiCqlNUyBoF_aY'
       });
-
-      // Obtain the default map types from the platform object
+            // Obtain the default map types from the platform object
       var maptypes = platform.createDefaultLayers();
 
       // Instantiate (and display) the map
@@ -27,5 +56,6 @@
           center: { lng: 13.4, lat: 52.51 }
         });
     </script>
-  </body>
+    </div>
+</body>
 </html>
