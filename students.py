@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+
 
 app = Flask(__name__)
 app.template_folder = 'templates'
@@ -7,6 +8,9 @@ app.template_folder = 'templates'
 def map():
     # you can change xxx.html
     return render_template('home_page.html')
+@app.route('/form')
+def form():
+    return render_template('form.html')
 
 # @app.route("/map")
 # def map():
