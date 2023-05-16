@@ -5,6 +5,7 @@ app.template_folder = 'templates'
 
 @app.route("/")
 def map():
+    # you can change xxx.html
     return render_template('Login_page.html')
 
 # @app.route("/map")
@@ -22,4 +23,3 @@ if __name__ == '__main__':
 #  *------------------------------------------------------------------*   
 
 # python students.py
-# test for Lily
