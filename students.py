@@ -1,8 +1,31 @@
 from flask import Flask, render_template, request
-
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+
+db = SQLAlchemy(app)
+
+db_user = 'root'
+db_pass = 'sprintern2023'
+db_name = 'FieldApp'
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:sprintern2023@localhost/FieldApp"
+
+
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+def __repr__(self):
+        return '<User %r>' % self.username
 app.template_folder = 'templates'
+
+
+
+
 
 @app.route("/")
 def map():
