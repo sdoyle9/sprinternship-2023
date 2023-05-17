@@ -34,9 +34,18 @@ a:hover {
 a:active {
   color: #b000ff;
 }
+li{
+    border: 3px solid #8CEBFF;
+    line-height: 1;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 4px 0px 4px 0px;
+    background: #8EFDFF;
 
+}
 a:visited {
   color: rgb(255 0 0);
+  
 }
 
 span:hover {
@@ -56,12 +65,12 @@ nav {
   top: 0; 
   z-index: 100;
   display: flex;
-  justify-content: space-between; /* Adjusts the space distribution */
   align-items: center;
   padding: 0 4vw;
   background-color: rgba(255, 255, 255, 0.445);
   box-shadow: 0 0 20px rgb(0 0 0 / 50%);
   justify-content: center;
+  
 
 }
 .nav-menu {
@@ -76,6 +85,7 @@ nav {
   font-weight: 600;
   font-size: 20px;
   text-align: center;
+  margin-right: 20px;  /* Adds space to the right of each menu item */
 }
 
 .nav-menu li a {
@@ -272,6 +282,11 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column; 
+    border: 3px solid #8CEBFF;
+    line-height: 1;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding: 5px;
 }
         
 .f a {
