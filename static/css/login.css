@@ -127,7 +127,7 @@ body {
 
             height: 600px;
 
-            background-image: url("loginbackground.jpeg");
+            background-image: url("/static/IMG/loginbackground.jpeg");
 
             background-size: cover;
 
@@ -184,7 +184,7 @@ body {
             height: 650px;
             
 
-            background-image: url("loginbackground.jpeg");
+            background-image: url("/static/IMG/loginbackground.jpeg");
 
         }
 
