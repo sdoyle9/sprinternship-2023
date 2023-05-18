@@ -1,5 +1,20 @@
 @charset "UTF-8";
 
+li{
+  border: 3px solid #8CEBFF;
+  line-height: 1;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 4px 0px 4px 0px;
+  background: #8EFDFF;
+
+}
+li:first-child {
+  border: none;
+  background: none;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -118,20 +133,33 @@ nav {
   font-size: 25px;
   top: 18px;
 }
+
 .search-bar {
-    margin: 10px 0px 0px 0px;
+  position: absolute;
+  top: 25px;
+  left: 50px;
+  z-index: 1000;
+  background-color: #add8e6;
 }
+
+.search-bar:focus {
+  background-color: #add8e6;
+}
+
 
 .search-bar form {
     display: flex;
 }
 
+
 .search-bar input[type="text"] {
-    flex-grow: 1;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    margin: 0px 0px 0px 0px;
+  flex-grow: 1;
+  padding: 7px;
+  border: 1px solid #cccccc;
+  background-color: #add8e6; /* Light blue color */
+  border-radius: 15px; /* Rounder corners */
+  margin: 0px;
+  border-radius: 15px 0 0 15px;
 }
 
 .search-bar button {
@@ -142,11 +170,11 @@ nav {
     cursor: pointer;
     font-weight: 900;
     font-size: 25px;
+    border-radius: 0 15px 15px 0;
 }
 
 .search-bar {
-    position: absolute;
-    top: 3px;
+
     left: 50px;
     z-index: 1000;
 }
@@ -162,8 +190,8 @@ nav {
   display: flex;
   justify-content: space-around;
 
-  /* max W 550px */
-  max-width: 550px;
+  /* max W 650px */
+  max-width: 650px;
 }
 
 .nav-menu li {
@@ -172,6 +200,7 @@ nav {
   color: #dadbdd;
   font-weight: 600;
   text-align: center;
+  margin: 0 10px; /* This adds a margin of 10px to the left and right of each list item */
 }
 
 .nav-menu li a {
