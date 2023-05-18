@@ -31,7 +31,7 @@ app.template_folder = 'templates'
 @app.route("/")
 def map():
     # you can change xxx.html
-    return render_template('login.html')
+    return render_template('savepage.html')
 @app.route('/form')
 def form():
     return render_template('form.html')
