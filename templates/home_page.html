@@ -24,7 +24,20 @@
       <li><a href="#plot">option3</a></li>
       <li><a href="index2.html">option4</a></li>
     </ul>
-    <div class="burger">
+    <button id="option1Button" type="button">Option1</button>
+
+    <script>
+      // Get the button element
+      var option1Button = document.getElementById('option1Button');
+
+      // Add a click event listener to the button
+      option1Button.addEventListener('click', function() {
+        // Redirect to the desired link
+        window.location.href = 'https://cbbel.com/'; // Replace with the actual link you want to navigate to
+      });
+    </script>
+
+      <div class="burger">
       <div class="top-line"></div>
       <div class="middle-line"></div>
       <div class="bottom-line"></div>
@@ -46,19 +59,6 @@
         zoom: 10,
         center: { lng: 13.4, lat: 52.51 }
       });
-
-    // JavaScript for option 1
-    // Get the element by its ID
-    var option1 = document.getElementById("jiaoshe");
-
-    // Attach a click event listener
-    option1.addEventListener("click", function() {
-      // Specify the desired URL
-      var desiredURL = "https://cbbel.com/option1";
-
-      // Navigate to the desired URL
-      window.location.href = desiredURL;
-    });
   </script>
 </body>
 </html>

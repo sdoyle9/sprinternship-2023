@@ -6,7 +6,7 @@ app.template_folder = 'templates'
 @app.route("/")
 def map():
     # you can change xxx.html
-    return render_template('savepage.html')
+    return render_template('home_page.html')
 
 # @app.route("/map")
 # def map():
