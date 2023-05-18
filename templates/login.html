@@ -1,58 +1,37 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Xinyang's design</title>
-<link href="logoin.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/login.css" rel="stylesheet" type="text/css">
 </head>
-
-    <div class="a">
-
-        <div class="b"></div>
-
-        <div class="c"></div>
-
-        <div class="d"></div>
-
-        <div class="e"></div>
-
-        <p class="f">
-        
-        Sign in with Microsoft
-                               <!-- CBBEL Logo -->
-
-    <div class="container justify-content-center align-items-center" id="login">
-        <div class="container justify-content-center align-items-center">
-            <!-- Sign in with Microsoft-->
-            <div class="altsignin justify-content-center align-items-center">
-                <!-- CBBEL Logo -->
-                <img class="img-center" src="http://cbbel.com/wp-content/themes/cbbel/img/logo-mobile.gif"><br><br><br><br><br><br><br>
-                <div class="micrologin justify-content-center align-items-center">
-                    <!-- DO NOT REMOVE A TAG -->
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>       
-        
-        </p>
-
-
-    </div>
-
 <body>
-    
-
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#opt1">option1</a></li>
+      <li><a href="#opt2">option2</a></li>
+      <li><a href="#opt3">option3</a></li>
+      <li><a href="#opt4">option4</a></li>
+    </ul>
+    <div class="burger">
+      <div class="top-line"></div>
+      <div class="middle-line"></div>
+      <div class="bottom-line"></div>
+    </div>
+  </nav>
+  <div class="a">
+    <p class="f">  
+        <a id="micrologin" class="btn btn-info btn-md" href="{{ auth_url }}">Sign in with Microsoft</a>
+        <span class="g">
+            <img src="/static/IMG/log.png" width="48" height="48" alt=""/>
+        </span>
+    </p>
+    <div class="b"></div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+  </div>
 </body>
-
-
-
 </html>
