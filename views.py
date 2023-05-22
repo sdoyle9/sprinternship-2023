@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -11,5 +11,5 @@ app.config['SECRET_KEY']= "secret key"
 db =SQLAlchemy(app)
 
 @app.route('/')
-def main_index():
-    return "Blueprint hello!"
+def login():
+    return render_template('login.html')
