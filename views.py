@@ -16,7 +16,7 @@ def main_index():
     return "Blueprint hello!"
 
 
-#  *------------------------------------------------------------------*   Lily code
+#  *------------------------------------------------------------------*   Lily 
 
 from flask import render_template
 
@@ -31,4 +31,4 @@ def map_page():
 
 def savepage():
     return render_template('savepage.html')
-#  *------------------------------------------------------------------*   END Lily code
+#  *------------------------------------------------------------------*   END Lily 

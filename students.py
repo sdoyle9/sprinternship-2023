@@ -69,7 +69,7 @@ app.add_url_rule('/map', 'map_page', map_page)
 app.add_url_rule('/savepage', 'savepage', savepage)
 
 
-#  *------------------------------------------------------------------*   Lily code
+#  *------------------------------------------------------------------*   Lily 
 # python students.py
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
@@ -104,4 +104,4 @@ if __name__ == '__main__':
         db.drop_all()  # Drop all existing tables
         db.create_all()  # Create new tables according to the current models
     app.run(debug=False)
-#  *------------------------------------------------------------------*  END Lily code
+#  *------------------------------------------------------------------*  END Lily 
