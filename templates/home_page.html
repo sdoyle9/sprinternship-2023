@@ -3,7 +3,11 @@
 <head>
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+
   <link href="/static/css/home_page.css" rel="stylesheet" type="text/css">
   <style>
     html, body, #mapContainer {
@@ -18,26 +22,20 @@
   <nav>
     <ul class="nav-menu">
       <li>
-        <input type="search" id="addressSearch" placeholder="Type in location" class="search-bar">
-      </li>
+        <div class="search-container">
+          <form>
+              <input type="text" placeholder="Type in location">
+              <button type="submit">Go</button>
+          </form>
+      </div>
+    </li>
+    
       <li><a href="https://cbbel.com/">cbbel Web</a></li>
-      <li><a href="/">Home Page</a></li>
       <li><a href="/login" id="login">Sign Page</a></li>
-      <li><a href="/savepage" id="savepage">Save Page</a></li>
-      <li><a href="/map" id="map">click to save</a></li>
+      <li><a href="/savepage" id="savepage">Add Projects</a></li>
     </ul>
 
 
-    <script>
-      // Get the button element
-      var option1Button = document.getElementById('option1Button');
-
-      // Add a click event listener to the button
-      option1Button.addEventListener('click', function() {
-        // Redirect to the desired link
-        window.location.href = 'https://cbbel.com/'; // Replace with the actual link you want to navigate to
-      });
-    </script>
 
       <div class="burger">
       <div class="top-line"></div>
@@ -50,17 +48,25 @@
     var platform = new H.service.Platform({
       'apikey': 'qlrRiPNTPWGYLnSG9qJmWGtSay-QVgiCqlNUyBoF_aY'
     });
+
     // Obtain the default map types from the platform object
-    var maptypes = platform.createDefaultLayers();
+    var defaultLayers = platform.createDefaultLayers();
 
     // Instantiate (and display) the map
     var map = new H.Map(
       document.getElementById('mapContainer'),
-      maptypes.vector.normal.map,
+      defaultLayers.vector.normal.map,
       {
         zoom: 10,
         center: { lng: 13.4, lat: 52.51 }
       });
-  </script>
+
+    // Create the default UI components
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+    // Enable map events and behaviors (e.g., panning and zooming)
+    var mapEvents = new H.mapevents.MapEvents(map);
+    var behavior = new H.mapevents.Behavior(mapEvents);
+</script>
 </body>
 </html>
