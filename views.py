@@ -33,5 +33,4 @@ def map_page():
 
 def savepage():
     return render_template('savepage.html')
-<<<<<<< HEAD
 #  *------------------------------------------------------------------*   END Lily 
