@@ -42,7 +42,10 @@ from views import home, login, map_page, savepage
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/yufangyang/fieldapp.db"
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/yufangyang/fieldapp.db"
+# app.config['SECRET_KEY']= "secret key"
+ 
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////raabiahazeez/sprinternship-2023-3/fieldapp.db"
 app.config['SECRET_KEY']= "secret key"
 db =SQLAlchemy(app)
 
@@ -53,9 +56,9 @@ class User(db.Model):
     address = db.Column(db.String(120), nullable=False)
     salary = db.Column(db.Float, nullable=False)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/meleenatorres/FieldApp.db"
-app.config['SECRET_KEY']= "secret key"
-db =SQLAlchemy(app)
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/meleenatorres/FieldApp.db"
+# app.config['SECRET_KEY']= "secret key"
+# db =SQLAlchemy(app)
 
 # class User(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
@@ -78,6 +81,18 @@ app.add_url_rule('/', 'home', home)
 app.add_url_rule('/login', 'login', login)
 app.add_url_rule('/map', 'map_page', map_page)
 app.add_url_rule('/savepage', 'savepage', savepage)
+
+#project data 
+class Project(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    number = db.Column(db.String(20))
+    category = db.Column(db.String(50))
+    latitude = db.Column(db.Float)
+    longitude = db.Column(db.Float)
+    perimeter_points = db.Column(db.String(200))
+    notes = db.Column(db.Text)
+
 
 if __name__ == '__main__':
     with app.app_context():
