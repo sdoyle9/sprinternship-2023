@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Thundermandy12!@127.0.0.1/fieldapp"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/raabiahazeez/sprinternship-2023-3/fieldapp.db"
 app.config['SECRET_KEY']= "secret key"
 db =SQLAlchemy(app)
 
