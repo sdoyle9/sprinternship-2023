@@ -15,7 +15,7 @@ db =SQLAlchemy(app)
 @app.route("/")
 def map():
     # you can change xxx.html
-    return render_template('savepage.html')
+    return render_template('login.html')
 @app.route('/form')
 def form():
     return render_template('form.html')
