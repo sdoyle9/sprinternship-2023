@@ -1,6 +1,6 @@
 from flask import Flask, Blueprint
 
-from app import models
+from .models import MyModel
 from .extensions import db
 from .views import main
 
