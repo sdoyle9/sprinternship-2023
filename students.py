@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Thundermandy12!@127.0.0.1/fieldapp"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/meleenatorres/FieldApp.db"
 app.config['SECRET_KEY']= "secret key"
 db =SQLAlchemy(app)
 
@@ -15,7 +15,7 @@ db =SQLAlchemy(app)
 @app.route("/")
 def map():
     # you can change xxx.html
-    return render_template('savepage.html')
+    return render_template('login.html')
 @app.route('/form')
 def form():
     return render_template('form.html')
