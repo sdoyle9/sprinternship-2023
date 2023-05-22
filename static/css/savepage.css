@@ -151,9 +151,13 @@ nav {
 .content .login-wrapper .left-img {
   border-radius: 40px;
   flex: 1;
-  background: url(/static/IMG/bg.jpeg) no-repeat;
-  background-size: cover;
   position: relative;
+}
+
+.content .login-wrapper .left-img .map-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px; /* if you want the map to also have rounded corners */
 }
 .content .login-wrapper .left-img .glass {
   width: 60%;
@@ -183,6 +187,7 @@ nav {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.48);
+  color:  #457163; /* Add this line */
 }
 .content .login-wrapper .left-img .glass .tips h1 {
   margin: 15px 0;
@@ -191,6 +196,10 @@ nav {
   margin: 5px 0;
   display: block;
   font-weight: 100;
+  color: #457163; /* Add this line */
+}
+.content .login-wrapper .left-img .glass .tips h1 {
+  color: #7ad8ba;
 }
 .content .login-wrapper .right-login-form {
   flex: 1;
@@ -247,6 +256,7 @@ nav {
   margin: 0px 0;
   cursor: pointer;
 }
+
 .content .login-wrapper .right-login-form .form-wrapper .siginup-tips {
   text-align: center;
   font-weight: 600;

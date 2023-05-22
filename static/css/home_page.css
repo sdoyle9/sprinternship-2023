@@ -133,14 +133,17 @@ nav {
   font-size: 25px;
   top: 18px;
 }
-
-.search-bar {
+.search-container {
+  display: flex;
+  align-items: center; /* Add this */
   position: absolute;
-  top: 25px;
-  left: 50px;
+  left: 0;
+  top: 3px;
   z-index: 1000;
-  background-color: #add8e6;
+  padding: 10px;
 }
+
+
 
 .search-bar:focus {
   background-color: #add8e6;
@@ -173,13 +176,6 @@ nav {
     border-radius: 0 15px 15px 0;
 }
 
-.search-bar {
-
-    left: 50px;
-    z-index: 1000;
-}
-
-
 #jiaoshe {
   margin-top: 100px !important;
 }
@@ -206,3 +202,70 @@ nav {
 .nav-menu li a {
   color: rgba(0, 0, 0, 0.716);
 }
+
+.search-container input[type="text"] {
+  flex-grow: 1;
+  padding: 7px;
+  border: 1px solid #cccccc;
+  background-color: #add8e6; /* Light blue color */
+  border-radius: 15px 0 0 15px;
+  margin-top: 0px;
+  text-align: center; /* Center the text */
+  font-size: 25px;
+  height: 50px; /* Adjust as needed */
+  line-height: 50px; /* Adjust as needed */
+  vertical-align: middle;
+}
+
+.search-container button {
+  padding-right: 7px; /* Match padding with input */
+  padding-left: 7px; /* Match padding with input */
+  border: 1px solid #ccc;
+  border-radius: 0 15px 15px 0;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 25px; /* Match font size with input */
+  height: 50px; /* Adjust as needed */
+  line-height: 50px; /* Adjust as needed */
+  vertical-align: middle;
+  text-align: center; /* Center the text */
+}
+
+@media only screen and (max-width: 600px) {
+  #title {
+      font-size: 25px;
+  }
+
+  .nav-menu {
+      flex-direction: column;
+      max-width: 100%;
+  }
+
+  .nav-menu li {
+      width: 80%;
+      font-size: 14px;
+      margin: 5px 0; /* Add some vertical margin */
+  }
+
+  .search-bar input[type="text"],
+
+      .search-container {
+        position: static;  /* Removes absolute positioning */
+        padding: 20px 0;  /* Adds vertical padding */
+    }
+
+    .search-container input[type="text"] {
+        font-size: 18px;
+        width: 60%;  /* Reduces the width of the input field */
+    }
+
+  #first {
+      font-size: 20px;
+  }
+
+  .footer {
+      font-size: 20px;
+  }
+}
+
