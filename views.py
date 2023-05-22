@@ -12,10 +12,8 @@ app.config['SECRET_KEY']= "secret key"
 db =SQLAlchemy(app)
 
 @app.route('/')
-<<<<<<< HEAD
 def login():
     return render_template('login.html')
-=======
 def main_index():
     return "Blueprint hello!"
 
@@ -36,4 +34,3 @@ def map_page():
 def savepage():
     return render_template('savepage.html')
 #  *------------------------------------------------------------------*   END Lily code
->>>>>>> 7dbca4e08b9c8d740b303d19e1f4eb3971c21fdd
