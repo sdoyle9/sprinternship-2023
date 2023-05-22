@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -12,6 +12,10 @@ app.config['SECRET_KEY']= "secret key"
 db =SQLAlchemy(app)
 
 @app.route('/')
+<<<<<<< HEAD
+def login():
+    return render_template('login.html')
+=======
 def main_index():
     return "Blueprint hello!"
 
@@ -31,4 +35,9 @@ def map_page():
 
 def savepage():
     return render_template('savepage.html')
+<<<<<<< HEAD
 #  *------------------------------------------------------------------*   END Lily 
+=======
+#  *------------------------------------------------------------------*   END Lily code
+>>>>>>> 7dbca4e08b9c8d740b303d19e1f4eb3971c21fdd
+>>>>>>> f810a849c764c3b90ae276ac7f1ebe103fe48fc8
