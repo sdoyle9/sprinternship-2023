@@ -1,7 +1,13 @@
-from flask import Blueprint
+from flask import render_template
 
-main = Blueprint('main', __name__)
+def home():
+    return render_template('home_page.html')
 
-@main.route('/')
-def main_index():
-    return "Blueprint hello!"
+def login():
+    return render_template('login.html')
+
+def map_page():  
+    return render_template('map.html')
+
+def savepage():
+    return render_template('savepage.html')
