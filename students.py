@@ -44,7 +44,6 @@ app = Flask(__name__)
 
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/yufangyang/fieldapp.db"
 # app.config['SECRET_KEY']= "secret key"
- 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////raabiahazeez/sprinternship-2023-3/fieldapp.db"
 app.config['SECRET_KEY']= "secret key"
 db =SQLAlchemy(app)
@@ -69,12 +68,6 @@ class User(db.Model):
 #     email = db.Column(db.String(120), unique=True, nullable=False)
 
 @app.route("/")
-def map():
-    # you can change xxx.html
-    return render_template('login.html')
-@app.route('/form')
-def form():
-    return render_template('form.html')
 
 class Test(db.Model):
     id = db.Column(db.Integer, primary_key=True)
