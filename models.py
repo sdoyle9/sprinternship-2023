@@ -1,14 +1,35 @@
 from __init__ import db
+from enum import Enum
 
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), nullable=False)
-    age = db.Column(db.Integer, nullable=False)
-    address = db.Column(db.String(120), nullable=False)
-    salary = db.Column(db.Float, nullable=False)
+class CategoryEnum(Enum):
+    OPTION1 = 'Environmental Resources,'
+    OPTION2 = 'Municipal Engineering'
+    OPTION3 = 'Transportation'
+    OPTION4= 'Water Resources'
     
-class Test(db.Model):
+#project data 
+class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=True, nullable=False)
+    name = db.Column(db.String(50),nullable=False)
+    number = db.Column(db.Integer,nullable =False)
+    category = db.Column(db.Enum(CategoryEnum), nullable=False)
+    latitude = db.Column(db.Float)
+    longitude = db.Column(db.Float)
+    notes = db.Column(db.Text)
+    
+class Perimeter(db.Model):
+    id = db.Column(db.Float, primary_key=True)
+    lat1= db.Column(db.Float, nullable=False)
+    long1= db.Column(db.Float, nullable=False)
+    lat2= db.Column(db.Float, nullable=False)
+    long2= db.Column(db.Float, nullable=False)
+    lat3= db.Column(db.Float, nullable=False)
+    long3= db.Column(db.Float, nullable=False)
+    lat4= db.Column(db.Float, nullable=True)
+    long4= db.Column(db.Float, nullable=True)
+    lat5= db.Column(db.Float, nullable=True)
+    long5= db.Column(db.Float, nullable=True)
+    lat6= db.Column(db.Float, nullable=True)
+    long6= db.Column(db.Float, nullable=True)
+
     
