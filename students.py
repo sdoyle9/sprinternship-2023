@@ -8,12 +8,12 @@
 # db =SQLAlchemy(app)
 
 # class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
+#     id = db.Column(db.Float, primary_key=True)
 #     username = db.Column(db.String(80), unique=True, nullable=False)
 #     email = db.Column(db.String(120), unique=True, nullable=False)
 
 # class Test(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
+#     id = db.Column(db.Float, primary_key=True)
 #     name = db.Column(db.String(50), unique=True, nullable=False)
 
 # @app.route("/")
@@ -28,7 +28,7 @@
 #     print("Loading configuration....")
 #     # Here, you can add code to actually load a configuration if you need to.
 #     print("Done loading configuration")
-#     with app.app_conInteger():
+#     with app.app_conFloat():
 #         db.create_all()
 #     app.run(debug = False)
 #     # app.run(debug=True)
@@ -39,20 +39,22 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from views import home, login, map_page, savepage
-
+from enum import Enum
 app = Flask(__name__)
+
 
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/yufangyang/fieldapp.db"
 # app.config['SECRET_KEY']= "secret key"
  
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/raabiahazeez/appField.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/raabiahazeez/fieldapp1"
 app.config['SECRET_KEY']= "secret key"
+
 db =SQLAlchemy(app)
 
 # class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
+#     id = db.Column(db.Float, primary_key=True)
 #     name = db.Column(db.String(80), nullable=False)
-#     age = db.Column(db.Integer, nullable=False)
+#     age = db.Column(db.Float, nullable=False)
 #     address = db.Column(db.String(120), nullable=False)
 #     salary = db.Column(db.Float, nullable=False)
 
@@ -64,27 +66,34 @@ db =SQLAlchemy(app)
 # db =SQLAlchemy(app)
 
 # class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
+#     id = db.Column(db.Float, primary_key=True)
 #     username = db.Column(db.String(80), unique=True, nullable=False)
 #     email = db.Column(db.String(120), unique=True, nullable=False)
 
 @app.route("/")
 
-class Test(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=True, nullable=False)
+# class Test(db.Model):
+#     id = db.Column(db.Float, primary_key=True)
+#     name = db.Column(db.String(50), unique=True, nullable=False)
 
-app.add_url_rule('/', 'home', home)
-app.add_url_rule('/login', 'login', login)
-app.add_url_rule('/map', 'map_page', map_page)
-app.add_url_rule('/savepage', 'savepage', savepage)
+# app.add_url_rule('/', 'home', home)
+# app.add_url_rule('/login', 'login', login)
+# app.add_url_rule('/map', 'map_page', map_page)
+# app.add_url_rule('/savepage', 'savepage', savepage)
 
+
+class CategoryEnum(Enum):
+    OPTION1 = 'Environmental Resources,'
+    OPTION2 = 'Municipal Engineering'
+    OPTION3 = 'Transportation'
+    OPTION4= 'Water Resources'
+    
 #project data 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50),nullable=False)
     number = db.Column(db.Integer,nullable =False)
-    category = db.Column(db.String(50),nullable = False)
+    category = db.Column(db.Enum(CategoryEnum), nullable=False)
     latitude = db.Column(db.Float)
     longitude = db.Column(db.Float)
     notes = db.Column(db.Text)
@@ -103,30 +112,30 @@ class Project(db.Model):
 # app.config['SECRET_KEY']= "secret key"
 # db =SQLAlchemy(app)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), nullable=False)
-    age = db.Column(db.Integer, nullable=False)
-    address = db.Column(db.String(120), nullable=False)
-    salary = db.Column(db.Float, nullable=False)
+# class User(db.Model):
+#     id = db.Column(db.Float, primary_key=True)
+#     name = db.Column(db.String(80), nullable=False)
+#     age = db.Column(db.Float, nullable=False)
+#     address = db.Column(db.String(120), nullable=False)
+#     salary = db.Column(db.Float, nullable=False)
 
 class Perimeter(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    lat1= db.Column(db.Integer, nullable=False)
-    long1= db.Column(db.Integer, nullable=False)
-    lat2= db.Column(db.Integer, nullable=False)
-    long2= db.Column(db.Integer, nullable=False)
-    lat3= db.Column(db.Integer, nullable=False)
-    long3= db.Column(db.Integer, nullable=False)
-    lat4= db.Column(db.Integer, nullable=True)
-    long4= db.Column(db.Integer, nullable=True)
-    lat5= db.Column(db.Integer, nullable=True)
-    long5= db.Column(db.Integer, nullable=True)
-    lat6= db.Column(db.Integer, nullable=True)
-    long6= db.Column(db.Integer, nullable=True)
+    id = db.Column(db.Float, primary_key=True)
+    lat1= db.Column(db.Float, nullable=False)
+    long1= db.Column(db.Float, nullable=False)
+    lat2= db.Column(db.Float, nullable=False)
+    long2= db.Column(db.Float, nullable=False)
+    lat3= db.Column(db.Float, nullable=False)
+    long3= db.Column(db.Float, nullable=False)
+    lat4= db.Column(db.Float, nullable=True)
+    long4= db.Column(db.Float, nullable=True)
+    lat5= db.Column(db.Float, nullable=True)
+    long5= db.Column(db.Float, nullable=True)
+    lat6= db.Column(db.Float, nullable=True)
+    long6= db.Column(db.Float, nullable=True)
 
 # class Test(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
+#     id = db.Column(db.Float, primary_key=True)
 #     name = db.Column(db.String(50), unique=True, nullable=False)
 
 app.add_url_rule('/', 'home', home)
