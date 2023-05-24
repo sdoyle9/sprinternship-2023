@@ -189,6 +189,10 @@ nav {
   border: 1px solid rgba(255, 255, 255, 0.48);
   color:  #457163; /* Add this line */
 }
+.btn a {
+  color: darkblue;
+}
+
 .content .login-wrapper .left-img .glass .tips h1 {
   margin: 15px 0;
 }
