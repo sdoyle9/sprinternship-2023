@@ -14,17 +14,4 @@ def create_app():
 
     return app
 
-
-# def start_app():
-#     from views import views
-#     app.register_blueprint(views, url_prefix='/')
-    
-# if __name__ == '__main__':
-#     print("Loading configuration....")
-#     # Here, you can add code to actually load a configuration if you need to.
-#     print("Done loading configuration")
-#     with app.app_context():
-#         db.create_all()
-#     app.run(debug = False)
-
     
