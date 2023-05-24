@@ -1,11 +1,14 @@
-from flask import Flask
-from views import db 
-from flask_sqlalchemy import SQLAlchemy
+from __init__ import db
 
 
-class Projects(db.Model):
-    projectID = db.Column(db.String(150), nullable = False, unique = True)
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+    address = db.Column(db.String(120), nullable=False)
+    salary = db.Column(db.Float, nullable=False)
     
-    def __repr__(self):
-        return '<Name %r>' % self.name
+class Test(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), unique=True, nullable=False)
     
