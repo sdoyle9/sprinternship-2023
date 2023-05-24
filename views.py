@@ -1,36 +1,45 @@
-# from flask import Blueprint
-# from flask_sqlalchemy import SQLAlchemy
-# from flask import Flask, render_template
+from flask import Blueprint
+from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template
+from datetime import datetime
+from __init__ import app
 
-# app = Flask(__name__)
+views = Blueprint('views', __name__)
 
-# def home():
-#     return render_template('home_page.html')
+@views.route('/')
+def main():
+    return render_template('login.html')
 
-# app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Thundermandy12!@127.0.0.1/fieldapp"
-# app.config['SECRET_KEY']= "secret key"
-# db =SQLAlchemy(app)
+@views.route('/login')
+def login():
+    return render_template('login.html')
 
-# @app.route('/')
-# def login():
-#     return render_template('login.html')
-# def main_index():
-#     return "Blueprint hello!"
+@views.route('/home')
+def home():
+    return render_template('home_page.html')
+
+@views.route('/map')
+def map_page():
+    return render_template('map.html')
+
+@views.route('/savepage')
+def savepage():
+    return render_template('savepage.html')
 
 
 #  *------------------------------------------------------------------*   Lily 
 
-from flask import render_template
+# from flask import render_template
 
-def home():
-    return render_template('home_page.html')
+# def home():
+#     return render_template('home_page.html')
 
-def login():
-    return render_template('login.html')
+# def login():
+#     return render_template('login.html')
 
-def map_page():  
-    return render_template('map.html')
+# def map_page():  
+#     return render_template('map.html')
 
-def savepage():
-    return render_template('savepage.html')
+# def savepage():
+#     return render_template('savepage.html')
 #  *------------------------------------------------------------------*   END Lily 
