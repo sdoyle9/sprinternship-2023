@@ -18,7 +18,7 @@ def home():
 
 @views.route('/map')
 def map_page():
-    return render_template('map.html')
+    return render_template('home_page.html')
 
 @views.route('/savepage')
 def savepage():
