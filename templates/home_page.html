@@ -57,16 +57,24 @@
       document.getElementById('mapContainer'),
       defaultLayers.vector.normal.map,
       {
-        zoom: 10,
-        center: { lng: 13.4, lat: 52.51 }
+        zoom: 15,
+        center: { lat: 41.991890, lng: -87.863319 }
       });
 
     // Create the default UI components
+    window.addEventListener('resize', () => map.getViewPort().resize());
     var ui = H.ui.UI.createDefault(map, defaultLayers);
 
     // Enable map events and behaviors (e.g., panning and zooming)
     var mapEvents = new H.mapevents.MapEvents(map);
     var behavior = new H.mapevents.Behavior(mapEvents);
+
+    // Create a marker at CBBEL's address 
+    var cbbelMarker = new H.map.Marker({ lat: 41.991890, lng: -87.863319 });
+
+    // Adding the marker to the map ? 
+    // new code!
+    map.addObject(cbbelMarker);
 </script>
 </body>
 </html>
