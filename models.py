@@ -7,7 +7,6 @@ class CategoryEnum(Enum):
     OPTION3 = 'Transportation'
     OPTION4= 'Water Resources'
     
-#project data 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50),nullable=False)
