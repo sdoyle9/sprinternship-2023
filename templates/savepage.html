@@ -1,4 +1,4 @@
-<!doctype html>
+{% comment %} <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -85,6 +85,107 @@
                     <div class="other-login">
                         <div class="divider">
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> {% endcomment %}
+{% comment %} ---------------------------------------------------------- {% endcomment %}
+
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>savepage</title>
+<link href="/static/css/savepage.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+
+  <nav>
+    <ul class="nav-menu">
+        <li><a href="/">Map Page</a></li>
+        <li><a href="/savepage" id="savepage">Add Projects</a></li>
+        <li><a href="https://cbbel.com/">cbbel Web</a></li>
+    </ul>
+    <div class="burger">
+      <div class="top-line"></div>
+      <div class="middle-line"></div>
+      <div class="bottom-line"></div>
+    </div>
+  </nav>
+  
+    <div class="content">
+        <div class="login-wrapper">
+            <div class="left-img">
+                <div class="map-container" id="mapContainer"></div>
+    
+                <script>
+                  var platform = new H.service.Platform({
+                    'apikey': 'qlrRiPNTPWGYLnSG9qJmWGtSay-QVgiCqlNUyBoF_aY'
+                  });
+                  // Obtain the default map types from the platform object
+                  var maptypes = platform.createDefaultLayers();
+              
+                  // Instantiate (and display) the map
+                  var map = new H.Map(
+                    document.getElementById('mapContainer'),
+                    maptypes.vector.normal.map,
+                    {
+                      zoom: 10,
+                      center: { lng: 13.4, lat: 52.51 }
+                    });
+                </script>
+
+                <div class="glass">
+                    <div class="tips">
+                        <div class="title">
+                            THE MAP NETWORK
+                        </div>
+                        <h1>Hi!</h1>
+                        <span>This is a place where map data information can be stored</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right-login-form">
+                <div class="form-wrapper">
+
+                    <div class="form-group" style="margin-top: 2.0em;">
+                        <label for="name"><b>Project Name</b></label>
+                        {{form.name(class="form-control", placeholder="Enter project name")}}
+                    </div>
+                    <div class="form-group">
+                        <label for="category"><b>Category</b></label>
+                        {{form.category(class="form-control", placeholder="Enter your category")}}
+                    </div>
+                    <div class="form-group">
+                        <label for="longitude"><b>Longitude</b></label>
+                        {{form.longitude(class="form-control", placeholder="Enter your longitude")}}
+                    </div>
+                    <div class="form-group">
+                        <label for="latitude"><b>Latitude</b></label>
+                        {{form.latitude(class="form-control", placeholder="Enter your latitude")}}
+                    </div>
+                    <div class="form-group">
+                        <label for="project"><b>Project</b></label>
+                        {{form.project(class="form-control", placeholder="Enter your project #")}}
+                    </div>
+                    <div class="form-group">
+                        <label for="notes"><b>Notes</b></label>
+                        {{form.notes(class="form-control", placeholder="Enter your notes")}}
+                    </div>
+                    
+                    <button class="btn"><a href="/map">save </a></button>
+
+                    <div class="other-login">
+                        <div class="divider"></div>
                     </div>
                 </div>
             </div>
